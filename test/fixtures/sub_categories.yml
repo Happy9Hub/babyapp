@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: MyString
+  label: MyString
+  isLeaf: false
+  catPropertyModels: one
+  rules: one
+  firstLevelCatid: 1
+  lscSetid: 1
+  variationCat: false
+  ative: false
+  subcategories: one
+
+two:
+  id: 1
+  name: MyString
+  label: MyString
+  isLeaf: false
+  catPropertyModels: two
+  rules: two
+  firstLevelCatid: 1
+  lscSetid: 1
+  variationCat: false
+  ative: false
+  subcategories: two
