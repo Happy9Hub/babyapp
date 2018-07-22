@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_08_153243) do
+ActiveRecord::Schema.define(version: 2018_07_13_164158) do
 
-  create_table "sub_categories", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "id"
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_categories", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "label"
     t.boolean "isLeaf"
@@ -23,12 +27,12 @@ ActiveRecord::Schema.define(version: 2018_07_08_153243) do
     t.integer "lscSetId"
     t.boolean "variationCat"
     t.boolean "active"
-    t.bigint "subcategories_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sub_categories_id"
     t.index ["catPropertyModels_id"], name: "index_sub_categories_on_catPropertyModels_id"
     t.index ["rules_id"], name: "index_sub_categories_on_rules_id"
-    t.index ["subcategories_id"], name: "index_sub_categories_on_subcategories_id"
+    t.index ["sub_categories_id"], name: "index_sub_categories_on_sub_categories_id"
   end
 
 end
